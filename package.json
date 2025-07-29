@@ -1,0 +1,23 @@
+{
+    "name": "pdf-app",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js",
+        "dev": "nodemon index.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "ejs": "^3.1.10",
+        "express": "^4.19.2",
+        "express-session": "^1.18.0",
+        "multer": "^1.4.5-lts.1",
+        "sqlite3": "^5.1.7"
+    },
+    "devDependencies": {
+        "nodemon": "^3.1.4"
+    }
+}

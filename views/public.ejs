@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Indogulf group</title>
+        <!-- favicons Icons -->
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons/favicon-16x16.png" />
+        <link rel="manifest" href="/assets/images/favicons/site.webmanifest" />
+        <meta name="description" content="Agriox HTML Template For Agriculture Farming Services" />
+        <!-- fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com/" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Averia+Sans+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&amp;family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&amp;family=Shadows+Into+Light&amp;display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="/assets/vendors/bootstrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="/assets/vendors/animate/animate.min.css" />
+        <link rel="stylesheet" href="/assets/vendors/animate/custom-animate.css" />
+        <link rel="stylesheet" href="/assets/vendors/fontawesome/css/all.min.css" />
+        <link rel="stylesheet" href="/assets/vendors/jarallax/jarallax.css" />
+        <link rel="stylesheet" href="/assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css" />
+        <link rel="stylesheet" href="/assets/vendors/nouislider/nouislider.min.css" />
+        <link rel="stylesheet" href="/assets/vendors/nouislider/nouislider.pips.css" />
+        <link rel="stylesheet" href="/assets/vendors/odometer/odometer.min.css" />
+        <link rel="stylesheet" href="/assets/vendors/swiper/swiper.min.css" />
+        <link rel="stylesheet" href="/assets/vendors/icomoon-icons/style.css" />
+        <link rel="stylesheet" href="/assets/vendors/tiny-slider/tiny-slider.min.css" />
+        <link rel="stylesheet" href="/assets/vendors/reey-font/stylesheet.css" />
+        <link rel="stylesheet" href="/assets/vendors/owl-carousel/owl.carousel.min.css" />
+        <link rel="stylesheet" href="/assets/vendors/owl-carousel/owl.theme.default.min.css" />
+        <link rel="stylesheet" href="/assets/vendors/twentytwenty/twentytwenty.css" />
+        <link rel="stylesheet" href="/assets/vendors/jquery-ui/jquery-ui.css" />
+        <!-- template styles -->
+        <link rel="stylesheet" href="/assets/css/agriox.css" />
+        <!-- mode css -->
+        <link rel="stylesheet" ID="jssMode" href="/assets/css/modes/agriox-light.css" />
+        <!-- toolbar css -->
+        <link rel="stylesheet" href="/assets/vendors/toolbar/css/toolbar.css" />
+        <style>
+            .text-justify {
+                text-align: justify;
+            }
+            .cat-sidebar {
+            }
+            .cat-group {
+                margin-top: 12px;
+            }
+            .cat-group,
+            .cat-children {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-end;
+            }
+            .cat-children {
+                width: 93%;
+                align-items: flex-start;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease-out;
+            }
+            .cat-children.expanded {
+                max-height: 500px;
+                transition: max-height 0.3s ease-in;
+            }
+            .cat-link {
+                display: block;
+                width: 100%;
+                padding: 6px 12px;
+                border-radius: 4px;
+                box-sizing: border-box;
+                font-size: 0.94rem;
+                line-height: 1.4;
+                margin-top: 4px;
+                transition: all 120ms linear;
+                position: relative;
+            }
+            .cat-link.active,
+            .cat-link:hover {
+                background: #f9f9f9;
+                color: var(--agriox-primary, #334b35);
+            }
+            .cat-link.active {
+                border: 1px solid #e8e8e8;
+            }
+            .cat-link.parent {
+                font-weight: 500;
+            }
+            .cat-parent-wrapper {
+                display: flex;
+                align-items: center;
+                gap: 4px;
+                width: 100%;
+                margin-top: 4px;
+            }
+            .cat-parent-wrapper .cat-link.parent {
+                flex: 1;
+                margin-top: 0;
+                border-radius: 4px 0 0 4px;
+            }
+            .cat-dropdown-toggle {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 32px;
+                height: 34px !important;
+                background: transparent;
+                border: none;
+                border-radius: 0 4px 4px 0;
+                cursor: pointer;
+                transition: all 120ms linear;
+                padding: 6px 0;
+            }
+            .cat-dropdown-toggle:hover {
+                background: #f9f9f9;
+            }
+            .cat-dropdown-toggle i {
+                font-size: 0.75rem;
+                color: #666;
+                transition: transform 0.3s ease;
+            }
+            .cat-dropdown-toggle.expanded i {
+                transform: rotate(180deg);
+            }
+            .cat-parent-wrapper:has(.cat-link.active) .cat-dropdown-toggle {
+                background: #f9f9f9;
+                border: 1px solid #e8e8e8;
+                border-left: none;
+                margin-left: -1px;
+            }
+            .cat-parent-wrapper:hover .cat-link.parent,
+            .cat-parent-wrapper:hover .cat-dropdown-toggle {
+                background: #f9f9f9;
+            }
+            .cat-parent-wrapper .cat-link.parent {
+                border-radius: 4px;
+            }
+            .cat-parent-wrapper:has(.cat-dropdown-toggle) .cat-link.parent {
+                border-radius: 4px 0 0 4px;
+                margin-right: -1px;
+            }
+            .cat-dropdown-toggle {
+                border-radius: 0 4px 4px 0;
+                border-left: 1px solid #e8e8e8;
+            }
+            .cat-files-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+            .cat-file {
+                border: 1px solid #e8e8e8;
+                background: #f9f9f9;
+                padding: 16px;
+                border-radius: 8px;
+                display: flex;
+                gap: 12px;
+                align-items: center;
+                transition: all 120ms linear;
+                text-decoration: none;
+                color: inherit;
+            }
+            .cat-file:hover {
+                color: inherit;
+                background: #f4f4f4;
+                text-decoration: none;
+            }
+            .cat-file img {
+                height: 40px;
+            }
+            .cat-file div {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                height: 100%;
+            }
+            .cat-file h6 {
+                margin-bottom: 4px;
+            }
+            .cat-file small {
+                line-height: 1;
+                font-size: 0.8rem;
+            }
+            /* Custom styles for disclaimer modal */
+            .disclaimer-modal .modal-content {
+                border-radius: 8px;
+            }
+            .disclaimer-modal .modal-header {
+                background: #f8f9fa;
+                border-bottom: 1px solid #dee2e6;
+            }
+            .disclaimer-modal .alert-warning {
+                border-left: 4px solid #ffc107;
+            }
+            .disclaimer-modal .btn-primary {
+                background-color: #334b35;
+                border-color: #334b35;
+            }
+            .disclaimer-modal .btn-primary:hover {
+                background-color: #2a3d2c;
+                border-color: #2a3d2c;
+            }
+            @media (min-width: 992px) {
+                .cat-files-grid {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 12px;
+                }
+            }
+            @media (max-width: 576px) {
+                .cat-files-grid {
+                    display: grid;
+                    grid-template-columns: repeat(1, 1fr);
+                    gap: 12px;
+                }
+                .cat-sidebar {
+                    border-bottom: 1px solid #dee2e6 !important;
+                    padding-bottom: 24px;
+                    margin-bottom: 24px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="preloader">
+            <img class="preloader__image" width="200" src="/assets/images/loader.png" alt="" />
+        </div>
+        <!-- /.preloader -->
+        <div class="page-wrapper">
+            <header class="main-header main-header--one clearfix">
+                <div class="main-header--one__wrapper">
+                    <div class="main-header--one__top clearfix">
+                        <div class="auto-container">
+                            <div class="main-header--one__top-left">
+                                <div class="text">
+                                    <p>Welcome to Indogulf Group Website</p>
+                                </div>
+                                <div class="social-link clearfix">
+                                    <ul>
+                                        <li>
+                                            <a href="https://twitter.com/indogulfcrops" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.facebook.com/indogulfcropsciences" target="_blank"
+                                                ><i class="fab fa-facebook"></i
+                                            ></a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.youtube.com/@indogulfcropsciences" target="_blank"><i class="fab fa-youtube"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.instagram.com/indogulfcropsciences" target="_blank"
+                                                ><i class="fab fa-instagram"></i
+                                            ></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="main-header--one__top-right clearfix">
+                                <ul>
+                                    <li>
+                                        <div class="icon"><i class="fa fa-envelope"></i></div>
+                                        <div class="text">
+                                            <p><a href="mailto:Info@groupindogulf.com">Info@groupindogulf.com</a></p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="icon"><i class="fa fa-phone"></i></div>
+                                        <div class="text">
+                                            <p>+91 11 400 40 400</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main-header--one__bottom clearfix">
+                        <div class="auto-container">
+                            <div class="main-header--one__bottom-inner">
+                                <div class="main-header--one__bottom-left">
+                                    <div class="logo">
+                                        <a href="https://groupindogulf.com/~/Default.aspx">
+                                            <img class="dark-logo" src="/assets/images/resources/HeaderLogo.png" alt="" />
+                                        </a>
+                                    </div>
+                                </div>
+                                <nav class="main-menu main-menu--1">
+                                    <div class="main-menu__inner">
+                                        <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
+                                        <div class="stricky-one-logo">
+                                            <div class="logo">
+                                                <a href="https://groupindogulf.com/default.aspx">
+                                                    <img class="dark-logo" src="/assets/images/resources/HeaderLogo.png" alt="" />
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="main-header--one__bottom-right">
+                                            <ul class="main-menu__list">
+                                                <li class="home-link"><a href="https://groupindogulf.com/default.aspx">Home</a></li>
+                                                <li class="dropdown">
+                                                    <a href="#">About</a>
+                                                    <ul>
+                                                        <li><a href="https://groupindogulf.com/Company_Profile.aspx">Company Profile</a></li>
+                                                        <li><a href="https://groupindogulf.com/History.aspx">History</a></li>
+                                                        <li>
+                                                            <a href="https://groupindogulf.com/Board_of_Directors_Promotors.aspx">Management Team</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="https://groupindogulf.com/Mission_Vision_Our_Values.aspx"
+                                                                >Mission, Vision & Our Values</a
+                                                            >
+                                                        </li>
+                                                        <li>
+                                                            <a href="https://groupindogulf.com/Awards_Recognitions.aspx">Awards & Recognitions</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="https://groupindogulf.com/Corporate_Social_Responsibility.aspx"
+                                                                >Corporate Social Responsibility</a
+                                                            >
+                                                        </li>
+                                                        <li>
+                                                            <a href="https://groupindogulf.com/Our_Associate_Companies.aspx">Associate Companies</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="https://groupindogulf.com/Memberships_Associations.aspx"
+                                                                >Certification & Membership</a
+                                                            >
+                                                        </li>
+                                                        <li><a href="https://groupindogulf.com/Quality_Policy.aspx">Quality Policy</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="dropdown">
+                                                    <a href="#">Products</a>
+                                                    <ul>
+                                                        <li class="dropdown">
+                                                            <a href="#">Crop Protection</a>
+                                                            <ul>
+                                                                <li>
+                                                                    <a href="https://groupindogulf.com/products.aspx#Insecticides">Insecticides</a>
+                                                                </li>
+                                                                <li><a href="https://groupindogulf.com/products.aspx#Herbicides">Herbicides</a></li>
+                                                                <li><a href="https://groupindogulf.com/products.aspx#Fungicides">Fungicides</a></li>
+                                                                <li>
+                                                                    <a href="https://groupindogulf.com/products.aspx#PlantGrowthRegulators"
+                                                                        >Plant Growth Regulators</a
+                                                                    >
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                        <li><a href="https://groupindogulf.com/products.aspx#Biostimulants">Biostimulant</a></li>
+                                                        <li>
+                                                            <a href="https://groupindogulf.com/products.aspx#CropSupplements">Plant Supplements</a>
+                                                        </li>
+                                                        <li><a href="https://groupindogulf.com/Adjuvants.aspx">Adjuvants</a></li>
+                                                        <li><a href="/assets/TNF.pdf" target="_blank">Technical & Formulations</a></li>
+                                                        <li><a href="/assets/PHV.pdf" target="_blank">Public Health & Veterinary</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="dropdown">
+                                                    <a href="#">Key Strength</a>
+                                                    <ul>
+                                                        <li>
+                                                            <a href="https://groupindogulf.com/Manufacturing_Strength.aspx">Manufacturing Strength</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="https://groupindogulf.com/Research_Development.aspx">Research & Development</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="https://groupindogulf.com/Product_Development_Training.aspx"
+                                                                >Product Development & Training</a
+                                                            >
+                                                        </li>
+                                                        <li><a href="https://groupindogulf.com/Packaging_Branding.aspx">Packaging & Branding</a></li>
+                                                        <li>
+                                                            <a href="https://groupindogulf.com/Quality_Assurance.aspx">Quality Assurance Policy</a>
+                                                        </li>
+                                                        <li><a href="https://groupindogulf.com/Marketing_Network.aspx">Marketing Network</a></li>
+                                                        <li>
+                                                            <a href="https://groupindogulf.com/Product_Registration_Regulatory_Affairs.aspx"
+                                                                >Product Registration & Regulatory Affairs</a
+                                                            >
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li class="dropdown">
+                                                    <a href="#">Facilities</a>
+                                                    <ul>
+                                                        <li>
+                                                            <a href="https://groupindogulf.com/Production_Facilities.aspx">Production Facilities</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="https://groupindogulf.com/Research_Development_Facilities.aspx"
+                                                                >Research & Development Facilities</a
+                                                            >
+                                                        </li>
+                                                        <li>
+                                                            <a href="https://groupindogulf.com/Health_Safety_Environment_Policy.aspx"
+                                                                >Environment, Health & Safety Policy</a
+                                                            >
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li class="dropdown">
+                                                    <a href="#">Business Area</a>
+                                                    <ul>
+                                                        <li>
+                                                            <a href="https://groupindogulf.com/Domestic_Brand_Business.aspx"
+                                                                >Domestic Brand Business</a
+                                                            >
+                                                        </li>
+                                                        <li>
+                                                            <a href="https://groupindogulf.com/Institutional_Business.aspx">Institutional Business</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="https://groupindogulf.com/International_Business.aspx">International Business</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="https://groupindogulf.com/Contract_Manufacturing.aspx">Contract Manufacturing</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li><a href="/" class="current">Investor</a></li>
+                                                <li class="dropdown">
+                                                    <a href="#">E-Library</a>
+                                                    <ul>
+                                                        <li><a href="https://groupindogulf.com/Event_Gallery.aspx">Photo Gallery</a></li>
+                                                        <li><a href="https://groupindogulf.com/Video_Gallery.aspx">Video Gallery</a></li>
+                                                        <li><a href="https://groupindogulf.com/Publications_Periodicals.aspx">Publications</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li><a href="https://groupindogulf.com/contact.aspx">Contact Us</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="stricky-header stricked-menu main-menu">
+                <div class="sticky-header__content"></div>
+            </div>
+            <!-- /.sticky-header__content -->
+            <section class="page-header clearfix" style="background: linear-gradient(45deg, #334b35, #486f4b)">
+                <div class="container">
+                    <div class="page-header__inner text-center clearfix">
+                        <h2>Investor Relations</h2>
+                    </div>
+                </div>
+            </section>
+            <!--Page Header End-->
+            <main>
+                <div class="container">
+                    <div class="row py-5" style="min-height: 80vh">
+                        <div class="col-lg-4 pe-lg-5 border-end">
+                            <h5 style="margin-bottom: 40px">Filters and Categories</h5>
+                            <div class="cat-sidebar">
+                                <% (categories || []).forEach(category=> { %>
+                                <div class="cat-group">
+                                    <% if (category.children && category.children.length > 0) { %>
+                                    <div class="cat-parent-wrapper">
+                                        <a
+                                            href="/?c=<%= category.name %>"
+                                            class="cat-link parent <%= activeCategory === category.name ? 'active' : '' %>"
+                                        >
+                                            <%= category.name %>
+                                        </a>
+                                        <button class="cat-dropdown-toggle" data-category="<%= category.name %>" aria-label="Toggle dropdown">
+                                            <i class="fas fa-chevron-down"></i>
+                                        </button>
+                                    </div>
+                                    <% } else { %>
+                                    <a
+                                        href="/?c=<%= category.name %>"
+                                        class="cat-link parent <%= activeCategory === category.name ? 'active' : '' %>"
+                                    >
+                                        <%= category.name %>
+                                    </a>
+                                    <% } %> <% if (category.children && category.children.length > 0) { %>
+                                    <div class="cat-children" id="children-<%= category.name.replace(/\s+/g, '-').toLowerCase() %>">
+                                        <% category.children.forEach(function(child) { %>
+                                        <a href="/?c=<%= child.name %>" class="cat-link <%= activeCategory === child.name ? 'active' : '' %>">
+                                            <%= child.name %>
+                                        </a>
+                                        <% }); %>
+                                    </div>
+                                    <% } %>
+                                </div>
+                                <% }); %>
+                            </div>
+                        </div>
+                        <div class="col-lg-8 ps-lg-5">
+                            <h5 style="margin-bottom: 40px">Available Files</h5>
+                            <% if (!activeCategory || activeCategory == null) { %>
+                            <div>
+                                <strong>Sakshi Jain</strong>
+                                <strong>Company Secretary and Compliance Officer</strong>
+                                <p>
+                                    501, Gopal Heights Plot No – D-9, Netaji Subhash Place,
+                                    <br />
+                                    New Delhi – 110034, India
+                                    <br />
+                                    Email: <a href="mailto:cs@groupindogulf.com">cs@groupindogulf.com</a>
+                                    <br />
+                                    Telephone: +91 11 4004 0417
+                                </p>
+                            </div>
+                            <div style="margin-top: 30px">
+                                <strong>Bigshare Services Private Limited</strong>
+                                <strong>Registrar to the Company</strong>
+                                <p>
+                                    Office No. S6-2, 6th floor, Pinnacle Business Park, Next to Ahura Centre
+                                    <br />
+                                    Mahakali Caves Road, Andheri East, Mumbai – 400093, India
+                                    <br />
+                                    Telephone: 022-62638200
+                                </p>
+                            </div>
+                            <% } %>
+                            <div class="cat-files-grid">
+                                <% (pdfs || []).forEach(pdf=> { %>
+                                <a
+                                    href="/view?file=<%= pdf.path %>"
+                                    target="_blank"
+                                    class="cat-file"
+                                    data-pdf-disclaimer="<%= pdf.isDisclaimer %>"
+                                    data-pdf-path="<%= pdf.path %>"
+                                    data-pdf-name="<%= pdf.name %>"
+                                >
+                                    <div>
+                                        <h6><%= pdf.name %></h6>
+                                    </div>
+                                </a>
+                                <% }); %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <!-- RHP Disclaimer Modal -->
+            <div class="modal fade disclaimer-modal" id="disclaimerModal" tabindex="-1" aria-labelledby="disclaimerModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="disclaimerModalLabel"><strong>Disclaimer -- Important</strong></h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body" style="font-size: 0.875rem; line-height: 1.5">
+                            <p style="margin-bottom: 1rem">
+                                <strong>THESE MATERIALS ARE NOT DIRECTED AT OR INTENDED TO BE ACCESSED BY PERSONS LOCATED OUTSIDE INDIA.</strong>
+                            </p>
+                            <p style="margin-bottom: 1rem">
+                                <strong>IMPORTANT:</strong> You must read and agree with the terms and conditions of the following disclaimer before
+                                continuing.
+                            </p>
+                            <p style="margin-bottom: 1rem">
+                                The following disclaimer applies to the red herring prospectus of Indogulf Cropsciences Limited (the
+                                "<strong>Company</strong>") dated June 21, 2025 (the "<strong>Red Herring Prospectus</strong>"), which was filed with
+                                the Registrar of Companies, Delhi and Haryana and thereafter with the Securities and Exchange Board of India, BSE
+                                Limited and National Stock Exchange of India Limited, in relation to the initial public offering of the equity shares
+                                of face value of ₹10 each (the "<strong>Equity Shares</strong>") of the Company (the "<strong>Offer</strong>").
+                            </p>
+                            <p style="margin-bottom: 1rem">
+                                <strong
+                                    >THE RED HERRING PROSPECTUS IS BEING MADE AVAILABLE ON THIS WEBSITE TO COMPLY WITH SECURITIES AND EXCHANGE BOARD
+                                    OF INDIA (ISSUE OF CAPITAL AND DISCLOSURE REQUIREMENTS) REGULATIONS, 2018, AS AMENDED ("SEBI ICDR
+                                    REGULATIONS").</strong
+                                >
+                            </p>
+                            <p style="margin-bottom: 1rem">
+                                The Red Herring Prospectus is directed at, and is intended for distribution to, and use by, residents of India only.
+                                You may not distribute a copy of the Red Herring Prospectus to any person outside India.
+                            </p>
+                            <p style="margin-bottom: 1rem">
+                                Access to the Red Herring Prospectus does not constitute a recommendation by the Company, the Selling Shareholders (as
+                                defined in the Red Herring Prospectus) or the members of the Syndicate (as defined in the Red Herring Prospectus) to
+                                subscribe to the Equity Shares offered in the Offer.
+                            </p>
+                            <p style="margin-bottom: 1rem">
+                                Any potential investor should note that investment in the Equity Shares involves a high degree of risk and for details
+                                relating to such risks, see the section titled "<em>Risk Factors</em>" on page 30 of the Red Herring Prospectus.
+                            </p>
+                            <p style="margin-bottom: 1rem">
+                                The Equity Shares offered in the Offer have not been and will not be registered, listed or otherwise qualified in any
+                                jurisdiction except India and may not be offered or sold to persons outside of India except in compliance with the
+                                applicable laws of each such jurisdiction. In particular, the Equity Shares offered in the Offer have not been and
+                                will not be registered under the U.S. Securities Act of 1933, as amended (the "<strong>U.S. Securities Act</strong>"),
+                                or the securities laws of any state of the United States and may not be offered or sold in the United States (as
+                                defined in Regulation S under the U.S. Securities Act ("<strong>Regulation S</strong>")) except pursuant to an
+                                exemption from, or in a transaction not subject to, the registration requirements of the U.S. Securities Act and
+                                applicable state securities laws. The Equity Shares offered in the Offer are being offered and sold only outside the
+                                United States in "offshore transactions" as defined in, and in reliance on, Regulation S.
+                            </p>
+                            <p style="margin-bottom: 1rem">
+                                No person outside India is eligible to Bid for Equity Shares in the Offer unless that person has received the
+                                preliminary offering memorandum for the Offer, which comprises the Red Herring Prospectus and the preliminary
+                                international wrap (which contains, among other things, the selling restrictions for the Offer outside India).
+                            </p>
+                            <p style="margin-bottom: 1rem">
+                                You are responsible for protecting against viruses and other destructive items. You are accessing this website at your
+                                own risk and it is your responsibility to take precautions to ensure that it is free from viruses and other items of a
+                                destructive nature.
+                            </p>
+                            <p style="margin-bottom: 1rem">If you are not in India, please exit this webpage.</p>
+                            <p style="margin-bottom: 1rem; margin-top: 2rem">
+                                <strong>Confirmation of your acceptance of the terms and conditions</strong>
+                            </p>
+                            <p style="margin-bottom: 1rem">
+                                By clicking on the "I Confirm" button below you represent to the Company, the Selling Shareholders and the members of
+                                the Syndicate that:
+                            </p>
+                            <ol style="margin-bottom: 1rem">
+                                <li>You have read the disclaimer set out above and you agree to be bound by its terms; and</li>
+                                <li>You are located in India.</li>
+                            </ol>
+                            <p style="margin-bottom: 1rem">
+                                If you cannot make these confirmations, you must press the button marked "I Do Not Confirm".
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">I Do Not Confirm</button>
+                            <button type="button" class="btn btn-primary" id="agreeAndView">I Confirm</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="footer-one">
+                <div class="footer-one__top">
+                    <div class="container-xxl">
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="footer-one__top-wrapper">
+                                    <div class="footer-one__bg"></div>
+                                    <div class="row">
+                                        <!--Start Footer Widget Column-->
+                                        <div class="col-xl-3 col-lg-6 col-md-6 wow animated fadeInUp" data-wow-delay="0.1s">
+                                            <div class="footer-widget__column footer-widget__about">
+                                                <div class="footer-widget__about-logo">
+                                                    <a href="https://groupindogulf.com/default.aspx">
+                                                        <img src="/assets/images/resources/flogo.png" alt="" />
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--End Footer Widget Column-->
+                                        <div class="col-xl-3 col-lg-6 col-md-6 wow animated fadeInUp" data-wow-delay="0.5s">
+                                            <div class="footer-widget__column footer-widget__explore">
+                                                <h2 class="footer-widget__title">E-Library</h2>
+                                                <ul class="footer-widget__explore-list">
+                                                    <li>
+                                                        <a class="text-light" href="https://groupindogulf.com/Event_Gallery.aspx">Photo Gallery</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="text-light" href="https://groupindogulf.com/Video_Gallery.aspx">Video Gallery</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="text-light" href="https://groupindogulf.com/Publications_Periodicals.aspx"
+                                                            >Publications</a
+                                                        >
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <!--Start Footer Widget Column-->
+                                        <div class="col-xl-3 col-lg-6 col-md-6 wow animated fadeInUp" data-wow-delay="0.5s">
+                                            <div class="footer-widget__column footer-widget__explore">
+                                                <h2 class="footer-widget__title">Career</h2>
+                                                <ul class="footer-widget__explore-list">
+                                                    <li>
+                                                        <a class="text-light" href="https://groupindogulf.com/Life_Indogulf.aspx">Life @ Indogulf</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="text-light" href="https://groupindogulf.com/Current_Openings.aspx"
+                                                            >Current Openings</a
+                                                        >
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-3 col-lg-6 col-md-6 wow animated fadeInUp" data-wow-delay="0.5s">
+                                            <div class="footer-widget__column footer-widget__explore">
+                                                <h2 class="footer-widget__title">Contact Us</h2>
+                                                <ul class="footer-widget__explore-list">
+                                                    <li>
+                                                        <p class="phone">
+                                                            <a href="tel:0911140040400" class="text-light"
+                                                                ><i class="fas fa-phone-square-alt"></i> +91 11 400 40 400
+                                                            </a>
+                                                        </p>
+                                                    </li>
+                                                    <li>
+                                                        <p>
+                                                            <a href="mailto:needhelp@company.com" class="text-light"
+                                                                ><i class="fa fa-envelope"></i> Info@groupindogulf.com
+                                                            </a>
+                                                        </p>
+                                                    </li>
+                                                    <li>
+                                                        <p class="text text-light">
+                                                            <i class="fas fa-map-marker-alt"></i> 501,Gopal Heights, Netaji Subhash Place,New
+                                                            Delhi-110034
+                                                        </p>
+                                                    </li>
+                                                    <li><a href="https://groupindogulf.com/contact.aspx" class="text-warning">Contact Form</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <!--End Footer Widget Column-->
+                                        <!--Start Footer Widget Column-->
+                                        <!--End Footer Widget Column-->
+                                        <!--Start Footer Widget Column-->
+                                        <!--End Footer Widget Column-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Start Footer One Bottom-->
+                <div class="footer-one__bottom">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="footer-one__bottom-inner">
+                                    <div class="footer-one__bottom-text">
+                                        <p>&copy; Copyright 2023 by <a href="#">Indogulf</a></p>
+                                    </div>
+                                    <!-- <div id="sfcywxg72ywe8rmzfyjkzhlmrz46eed3lb5"></div>
+                                <script type="text/javascript"
+                                    src="https://counter11.optistats.ovh/private/counter.js?c=ywxg72ywe8rmzfyjkzhlmrz46eed3lb5&down=async"
+                                    async></script><noscript><a href="https://lorryzone.com/" title="Lorryzone"><img
+                                            src="https://counter11.optistats.ovh/private/freecounterstat.php?c=ywxg72ywe8rmzfyjkzhlmrz46eed3lb5"
+                                            border="0" title="website counter code"
+                                            alt="website counter code"></a></noscript> -->
+                                    <div class="footer-one__bottom-social-links">
+                                        <ul>
+                                            <li>
+                                                <a href="https://twitter.com/indogulfcrops" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="https://www.facebook.com/indogulfcropsciences" target="_blank"
+                                                    ><i class="fab fa-facebook"></i
+                                                ></a>
+                                            </li>
+                                            <li>
+                                                <a href="https://www.youtube.com/@indogulfcropsciences" target="_blank"
+                                                    ><i class="fab fa-youtube"></i
+                                                ></a>
+                                            </li>
+                                            <li>
+                                                <a href="https://www.instagram.com/indogulfcropsciences" target="_blank"
+                                                    ><i class="fab fa-instagram"></i
+                                                ></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End Footer One Bottom-->
+            </footer>
+            <!--End Footer One-->
+        </div>
+        <!-- /.page-wrapper -->
+        <div class="mobile-nav__wrapper">
+            <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+            <!-- /.mobile-nav__overlay -->
+            <div class="mobile-nav__content">
+                <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
+                <div class="logo-box">
+                    <a href="default" aria-label="logo image">
+                        <img src="~/assets/images/resources/mobilemenu_logo.png" width="155" alt="" />
+                    </a>
+                </div>
+                <!-- /.logo-box -->
+                <div class="mobile-nav__container"></div>
+                <!-- /.mobile-nav__container -->
+                <ul class="mobile-nav__contact list-unstyled">
+                    <li><i class="icon-phone-call"></i><a href="mailto:Info@groupindogulf.com">Info@groupindogulf.com</a></li>
+                    <li><i class="icon-letter"></i><a href="tel:0911140040400">+91 11 400 40 400</a></li>
+                </ul>
+                <!-- /.mobile-nav__contact -->
+                <div class="mobile-nav__top">
+                    <div class="mobile-nav__social">
+                        <a href="https://twitter.com/indogulfcrops" target="_blank"><i class="fab fa-x-twitter"></i></a
+                        ><a href="https://www.facebook.com/indogulfcropsciences" target="_blank"><i class="fab fa-facebook"></i></a
+                        ><a href="https://www.youtube.com/@indogulfcropsciences" target="_blank"><i class="fab fa-youtube"></i></a
+                        ><a href="https://www.instagram.com/indogulfcropsciences" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <!-- /.mobile-nav__social -->
+                </div>
+                <!-- /.mobile-nav__top -->
+            </div>
+            <!-- /.mobile-nav__content -->
+        </div>
+        <!-- /.mobile-nav__wrapper -->
+        <!-- /.search-popup -->
+        <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="icon-right-arrow-2"></i></a>
+        <script src="/assets/vendors/jquery/jquery-3.5.1.min.js"></script>
+        <script src="/assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="/assets/vendors/jarallax/jarallax.min.js"></script>
+        <script src="/assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
+        <script src="/assets/vendors/jquery-appear/jquery.appear.min.js"></script>
+        <script src="/assets/vendors/jquery-circle-progress/jquery.circle-progress.min.js"></script>
+        <script src="/assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js"></script>
+        <script src="/assets/vendors/jquery-validate/jquery.validate.min.js"></script>
+        <script src="/assets/vendors/nouislider/nouislider.min.js"></script>
+        <script src="/assets/vendors/odometer/odometer.min.js"></script>
+        <script src="/assets/vendors/swiper/swiper.min.js"></script>
+        <script src="/assets/vendors/tiny-slider/tiny-slider.min.js"></script>
+        <script src="/assets/vendors/wnumb/wNumb.min.js"></script>
+        <script src="/assets/vendors/wow/wow.js"></script>
+        <script src="/assets/vendors/isotope/isotope.js"></script>
+        <script src="/assets/vendors/countdown/countdown.min.js"></script>
+        <script src="/assets/vendors/owl-carousel/owl.carousel.min.js"></script>
+        <script src="/assets/vendors/twentytwenty/twentytwenty.js"></script>
+        <script src="/assets/vendors/twentytwenty/jquery.event.move.js"></script>
+        <script src="/assets/vendors/parallax/parallax.min.js"></script>
+        <script src="/assets/vendors/tilt.js/tilt.jquery.js"></script>
+        <!-- template js -->
+        <script src="/assets/js/agriox.js"></script>
+        <script>
+            document.querySelector(".home-link").classList.remove("current");
+
+            // Dropdown functionality
+            document.addEventListener("DOMContentLoaded", function () {
+                // Check if any child category is active and expand its parent
+                const activeChild = document.querySelector(".cat-children .cat-link.active");
+                if (activeChild) {
+                    const parentGroup = activeChild.closest(".cat-group");
+                    if (parentGroup) {
+                        const dropdownToggle = parentGroup.querySelector(".cat-dropdown-toggle");
+                        const childrenContainer = parentGroup.querySelector(".cat-children");
+                        if (dropdownToggle && childrenContainer) {
+                            dropdownToggle.classList.add("expanded");
+                            childrenContainer.classList.add("expanded");
+                        }
+                    }
+                }
+
+                // Also check if parent category is active and has children
+                const activeParent = document.querySelector(".cat-parent-wrapper .cat-link.parent.active");
+                if (activeParent) {
+                    const parentWrapper = activeParent.closest(".cat-parent-wrapper");
+                    if (parentWrapper) {
+                        const dropdownToggle = parentWrapper.querySelector(".cat-dropdown-toggle");
+                        const parentGroup = parentWrapper.closest(".cat-group");
+                        const childrenContainer = parentGroup ? parentGroup.querySelector(".cat-children") : null;
+                        if (dropdownToggle && childrenContainer) {
+                            dropdownToggle.classList.add("expanded");
+                            childrenContainer.classList.add("expanded");
+                        }
+                    }
+                }
+
+                // Handle dropdown toggle
+                document.querySelectorAll(".cat-dropdown-toggle").forEach(function (toggle) {
+                    toggle.addEventListener("click", function (e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+
+                        const categoryName = this.getAttribute("data-category");
+                        const childrenId = "children-" + categoryName.replace(/\s+/g, "-").toLowerCase();
+                        const childrenContainer = document.getElementById(childrenId);
+
+                        if (childrenContainer) {
+                            // Toggle the expanded class
+                            this.classList.toggle("expanded");
+                            childrenContainer.classList.toggle("expanded");
+                        }
+                    });
+                });
+            });
+
+            // Disclaimer modal functionality
+            let currentViewUrl = "";
+            $(document).ready(function () {
+                // Handle click on PDF file links
+                $(".cat-file").on("click", function (e) {
+                    const isDisclaimer = $(this).data("pdf-disclaimer");
+                    const pdfPath = $(this).data("pdf-path");
+                    const pdfName = $(this).data("pdf-name");
+                    // If disclaimer is required, prevent default and show modal
+                    if (isDisclaimer == 1) {
+                        e.preventDefault();
+                        currentViewUrl = "/view?file=" + encodeURIComponent(pdfPath);
+                        // Update modal title with file name
+                        $("#disclaimerModalLabel").text("Disclaimer - " + pdfName);
+                        // Show the modal
+                        $("#disclaimerModal").modal("show");
+                    }
+                    // If no disclaimer required, let the normal link behavior proceed
+                });
+                // Handle agree and view button
+                $("#agreeAndView").on("click", function () {
+                    if (currentViewUrl) {
+                        // Open the PDF viewer in a new tab
+                        window.open(currentViewUrl, "_blank");
+                        // Close the modal
+                        $("#disclaimerModal").modal("hide");
+                        // Reset the view URL
+                        currentViewUrl = "";
+                    }
+                });
+                // Reset when modal is closed
+                $("#disclaimerModal").on("hidden.bs.modal", function () {
+                    currentViewUrl = "";
+                    $("#disclaimerModalLabel").text("Important Disclaimer");
+                });
+            });
+        </script>
+    </body>
+</html>

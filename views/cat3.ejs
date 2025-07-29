@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Indogulf group</title>
+    <!-- favicons Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons/favicon-16x16.png" />
+    <link rel="manifest" href="/assets/images/favicons/site.webmanifest" />
+    <meta name="description" content="Agriox HTML Template For Agriculture Farming Services" />
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com/">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Averia+Sans+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&amp;family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&amp;family=Shadows+Into+Light&amp;display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="/assets/vendors/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/vendors/animate/animate.min.css" />
+    <link rel="stylesheet" href="/assets/vendors/animate/custom-animate.css" />
+    <link rel="stylesheet" href="/assets/vendors/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="/assets/vendors/jarallax/jarallax.css" />
+    <link rel="stylesheet" href="/assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css" />
+    <link rel="stylesheet" href="/assets/vendors/nouislider/nouislider.min.css" />
+    <link rel="stylesheet" href="/assets/vendors/nouislider/nouislider.pips.css" />
+    <link rel="stylesheet" href="/assets/vendors/odometer/odometer.min.css" />
+    <link rel="stylesheet" href="/assets/vendors/swiper/swiper.min.css" />
+    <link rel="stylesheet" href="/assets/vendors/icomoon-icons/style.css">
+    <link rel="stylesheet" href="/assets/vendors/tiny-slider/tiny-slider.min.css" />
+    <link rel="stylesheet" href="/assets/vendors/reey-font/stylesheet.css" />
+    <link rel="stylesheet" href="/assets/vendors/owl-carousel/owl.carousel.min.css" />
+    <link rel="stylesheet" href="/assets/vendors/owl-carousel/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="/assets/vendors/twentytwenty/twentytwenty.css" />
+    <link rel="stylesheet" href="/assets/vendors/jquery-ui/jquery-ui.css">
+
+    <!-- template styles -->
+    <link rel="stylesheet" href="/assets/css/agriox.css" />
+
+    <!-- mode css -->
+    <link rel="stylesheet" ID="jssMode" href="/assets/css/modes/agriox-light.css">
+
+    <!-- toolbar css -->
+    <link rel="stylesheet" href="/assets/vendors/toolbar/css/toolbar.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        .text-justify {
+            text-align: justify;
+        }
+
+        .cat-sidebar {}
+
+        .cat-group {
+            margin-top: 12px;
+        }
+
+        .cat-group,
+        .cat-children {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-end;
+        }
+
+        .cat-children {
+            width: 93%;
+            align-items: flex-start;
+        }
+
+        .cat-link {
+            display: block;
+            width: 100%;
+            padding: 6px 12px;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 0.94rem;
+            line-height: 1.4;
+            margin-top: 4px;
+            transition: all 120ms linear;
+        }
+
+        .cat-link.active,
+        .cat-link:hover {
+            background: #F9F9F9;
+            color: var(--agriox-primary, #334b35);
+        }
+
+        .cat-link.active {
+            border: 1px solid #E8E8E8;
+        }
+
+        .cat-link.parent {
+            font-weight: 500;
+        }
+
+        .cat-files-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .cat-file {
+            border: 1px solid #E8E8E8;
+            background: #F9F9F9;
+            padding: 16px;
+            border-radius: 8px;
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            transition: all 120ms linear;
+        }
+
+        .cat-file:hover {
+            color: inherit;
+            background: #f4f4f4;
+        }
+
+        .cat-file img {
+            height: 40px;
+        }
+
+        .cat-file div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            height: 100%;
+        }
+
+        .cat-file h6 {
+            margin-bottom: 4px;
+        }
+
+        .cat-file small {
+            line-height: 1;
+            font-size: 0.8rem;
+        }
+
+        @media (min-width: 992px) {
+            .cat-files-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 12px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .cat-files-grid {
+                display: grid;
+                grid-template-columns: repeat(1, 1fr);
+                gap: 12px;
+            }
+
+            .cat-sidebar {
+                border-bottom: 1px solid #dee2e6 !important;
+                padding-bottom: 24px;
+                margin-bottom: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="preloader">
+        <img class="preloader__image" width="200" src="/assets/images/loader.png" alt="" />
+    </div>
+    <!-- /.preloader -->
+    <div class="page-wrapper">
+
+        <header class="main-header main-header--one clearfix border-bottom">
+            <div class="main-header--one__wrapper">
+                <div class="main-header--one__bottom clearfix">
+                    <div class="auto-container">
+                        <div class="main-header--one__bottom-inner">
+                            <div class="main-header--one__bottom-left">
+                                <div class="logo">
+                                    <a href="https://groupindogulf.com/">
+                                        <img class="dark-logo" src="/assets/images/resources/HeaderLogo.png" alt="" />
+                                    </a>
+                                </div>
+                            </div>
+                            <nav class="main-menu main-menu--1">
+                                <div class="main-menu__inner">
+                                    <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
+                                    <div class="stricky-one-logo">
+                                        <div class="logo">
+                                            <a href="https://groupindogulf.com/default.aspx">
+                                                <img class="dark-logo" src="/assets/images/resources/HeaderLogo.png"
+                                                    alt="" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="main-header--one__bottom-right">
+                                        <ul class="main-menu__list">
+                                            <li class="dropdown megamenu"><a href="/category">Categories</a> </li>
+                                            <li class="dropdown megamenu"><a href="/upload">Files</a> </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="container">
+                <div class="row py-5" style="min-height: 80vh;">
+                    <div class="col-lg-7 pe-lg-5 border-end">
+                        <h5 style="margin-bottom: 40px;">Filters and Categories</h5>
+                        <ul id="sortable" class="list-group">
+                            <!-- Parent categories -->
+                            <% categories.forEach(parentCategory=> { %>
+                                <li class="list-group-item" id="category_<%= parentCategory.id %>">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="d-flex" style="width: 90%;">
+
+                                            <span class="category-name" style="width: 100%;">
+                                                <%= parentCategory.name %>
+                                            </span>
+                                            <% if (!parentCategory.hasChildren) { %>
+                                                <select name="parentId" id="select_<%= parentCategory.id %>"
+                                                    class="form-control d-none ms-2" style="width: 100%;">
+                                                    <option value="">Select Parent</option>
+                                                    <% categories.forEach(otherParentCategory=> { %>
+                                                        <% if (parentCategory.id !==otherParentCategory.id) { %>
+                                                            <option value="<%= otherParentCategory.id %>">
+                                                                <%= otherParentCategory.name %>
+                                                            </option>
+                                                            <% } %>
+                                                                <% }) %>
+                                                </select>
+                                                <% } %>
+                                        </span>
+                                        <div>
+                                            <!-- Edit icon and functionality -->
+                                            <span class="edit-category" data-id="<%= parentCategory.id %>"
+                                                data-toggle="tooltip" data-placement="top" title="Edit Category"
+                                                style="cursor: pointer;"><i class="bi bi-pencil-square"></i></span>
+                                            <!-- Delete icon and functionality -->
+                                            <% if (!parentCategory.hasPdfs) { %>
+                                                <span class="delete-category ml-2" data-id="<%= parentCategory.id %>"
+                                                    data-toggle="tooltip" data-placement="top" title="Delete Category"
+                                                    style="cursor: pointer;"><i class="bi bi-trash"></i></span>
+                                                <% } else { %>
+                                                    <span class="delete-category ml-2 disabled" data-toggle="tooltip"
+                                                        data-placement="top" title="Contains PDFs, cannot delete"><i
+                                                            class="bi bi-trash"></i></span>
+                                                    <% } %>
+
+                                        </div>
+                                    </div>
+
+                                    <!-- Subcategories -->
+                                    <ul class="subcategories list-group mt-3" id="sortable_<%= parentCategory.id %>">
+                                        <% parentCategory.children.forEach(subcategory=> { %>
+                                            <li class="list-group-item" id="subcategory_<%= subcategory.id %>">
+                                                <div class="d-flex justify-content-between align-items-center">
+
+                                                    <span class="subcategory-name">
+                                                        <%= subcategory.name %>
+                                                    </span>
+                                                    <div>
+                                                        <!-- Edit icon and functionality for subcategory -->
+                                                        <span class="edit-subcategory" data-id="<%= subcategory.id %>"
+                                                            data-toggle="tooltip" data-placement="top"
+                                                            title="Edit Subcategory" style="cursor: pointer;"><i
+                                                                class="bi bi-pencil-square"></i></span>
+                                                        <!-- Delete icon and functionality for subcategory -->
+                                                        <% if (!subcategory.hasPdfs) { %>
+                                                            <span class="delete-subcategory ml-2"
+                                                                data-id="<%= subcategory.id %>" data-toggle="tooltip"
+                                                                data-placement="top" title="Delete Subcategory"
+                                                                style="cursor: pointer;"><i
+                                                                    class="bi bi-trash"></i></span>
+                                                            <% } else { %>
+                                                                <span class="delete-subcategory ml-2 disabled"
+                                                                    data-toggle="tooltip" data-placement="top"
+                                                                    title="Contains PDFs, cannot delete"><i
+                                                                        class="bi bi-trash"></i></span>
+                                                                <% } %>
+
+                                                                    <span class="make-parent ml-2"
+                                                                        data-id="<%= subcategory.id %>"
+                                                                        data-toggle="tooltip" data-placement="top"
+                                                                        title="Make Parent"><i
+                                                                            class="bi bi-arrow-up-square"></i></span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <% }) %>
+                                    </ul>
+                                </li>
+                                <% }) %>
+                        </ul>
+                    </div>
+                    <div class="col-lg-5 ps-lg-5">
+                        <h5 style="margin-bottom: 40px;">Available Files</h5>
+                        <form class="card p-3 shadow login-form mx-auto" id="addCategoryForm">
+                            <div class="card-body">
+                                <h5 class="card-title">Login to Admin Portal</h5>
+                                <p class="card-subtitle mb-4 text-body-secondary">Please enter your username and
+                                    password
+                                </p>
+                                <div class="form-group">
+                                    <label for="categoryName">Category Name</label>
+                                    <input type="text" class="form-control" id="categoryName" name="name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="parentCategory">Parent Category (optional)</label>
+                                    <select class="form-control" id="parentCategory" name="parent_id">
+                                        <option value="">None</option>
+                                        <% categories.forEach(category=> { %>
+                                            <option value="<%= category.id %>">
+                                                <%= category.name %>
+                                            </option>
+                                            <% }) %>
+                                    </select>
+                                </div>
+                                <div class="d-grid gap-2 mt-4 mb-3">
+                                    <button type="button" class="btn btn-success" id="addCategoryBtn">Add
+                                        Category</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer-one">
+            <div class="footer-one__top">
+                <div class="container-xxl">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="footer-one__top-wrapper">
+                                <div class="footer-one__bg"></div>
+                                <div class="row">
+                                    <!--Start Footer Widget Column-->
+                                    <div class="col-xl-3 col-lg-6 col-md-6 wow animated fadeInUp" data-wow-delay="0.1s">
+                                        <div class="footer-widget__column footer-widget__about">
+                                            <div class="footer-widget__about-logo">
+                                                <a href="https://groupindogulf.com/default.aspx">
+                                                    <img src="/assets/images/resources/flogo.png" alt="">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--End Footer Widget Column-->
+                                    <div class="col-xl-3 col-lg-6 col-md-6 wow animated fadeInUp" data-wow-delay="0.5s">
+                                        <div class="footer-widget__column footer-widget__explore">
+                                            <h2 class="footer-widget__title">E-Library</h2>
+                                            <ul class="footer-widget__explore-list">
+                                                <li><a class="text-light"
+                                                        href="https://groupindogulf.com/Event_Gallery.aspx">Photo
+                                                        Gallery</a></li>
+                                                <li><a class="text-light"
+                                                        href="https://groupindogulf.com/Video_Gallery.aspx">Video
+                                                        Gallery</a></li>
+                                                <li><a class="text-light"
+                                                        href="https://groupindogulf.com/Publications_Periodicals.aspx">Publications</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!--Start Footer Widget Column-->
+                                    <div class="col-xl-3 col-lg-6 col-md-6 wow animated fadeInUp" data-wow-delay="0.5s">
+                                        <div class="footer-widget__column footer-widget__explore">
+                                            <h2 class="footer-widget__title">Career</h2>
+                                            <ul class="footer-widget__explore-list">
+                                                <li><a class="text-light"
+                                                        href="https://groupindogulf.com/Life_Indogulf.aspx">Life @
+                                                        Indogulf</a></li>
+                                                <li><a class="text-light"
+                                                        href="https://groupindogulf.com/Current_Openings.aspx">Current
+                                                        Openings</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-3 col-lg-6 col-md-6 wow animated fadeInUp" data-wow-delay="0.5s">
+                                        <div class="footer-widget__column footer-widget__explore">
+                                            <h2 class="footer-widget__title">Contact Us</h2>
+                                            <ul class="footer-widget__explore-list">
+                                                <li>
+                                                    <p class="phone"><a href="tel:0911140040400" class="text-light"><i
+                                                                class="fas fa-phone-square-alt"></i> +91 11 400 40 400
+                                                        </a></p>
+                                                </li>
+                                                <li>
+                                                    <p><a href="mailto:needhelp@company.com" class="text-light"><i
+                                                                class="fa fa-envelope"></i> Info@groupindogulf.com </a>
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p class="text text-light"><i class="fas fa-map-marker-alt"></i>
+                                                        501,Gopal Heights, Netaji Subhash Place,New Delhi-110034</p>
+                                                </li>
+                                                <li><a href="https://groupindogulf.com/contact.aspx"
+                                                        class="text-warning">Contact Form</a> </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!--End Footer Widget Column-->
+                                    <!--Start Footer Widget Column-->
+                                    <!--End Footer Widget Column-->
+                                    <!--Start Footer Widget Column-->
+                                    <!--End Footer Widget Column-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Start Footer One Bottom-->
+            <div class="footer-one__bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="footer-one__bottom-inner">
+                                <div class="footer-one__bottom-text">
+                                    <p>&copy; Copyright 2023 by <a href="#">Indogulf</a></p>
+                                </div>
+                                <!-- <div id="sfcywxg72ywe8rmzfyjkzhlmrz46eed3lb5"></div>
+                                <script type="text/javascript"
+                                    src="https://counter11.optistats.ovh/private/counter.js?c=ywxg72ywe8rmzfyjkzhlmrz46eed3lb5&down=async"
+                                    async></script><noscript><a href="https://lorryzone.com/" title="Lorryzone"><img
+                                            src="https://counter11.optistats.ovh/private/freecounterstat.php?c=ywxg72ywe8rmzfyjkzhlmrz46eed3lb5"
+                                            border="0" title="website counter code"
+                                            alt="website counter code"></a></noscript> -->
+                                <div class="footer-one__bottom-social-links">
+                                    <ul>
+                                        <li><a href="https://twitter.com/indogulfcrops" target="_blank"><i
+                                                    class="fab fa-x-twitter"></i></a></li>
+                                        <li><a href="https://www.facebook.com/indogulfcropsciences" target="_blank"><i
+                                                    class="fab fa-facebook"></i></a></li>
+                                        <li><a href="https://www.youtube.com/@indogulfcropsciences" target="_blank"><i
+                                                    class="fab fa-youtube"></i></a></li>
+                                        <li><a href="https://www.instagram.com/indogulfcropsciences" target="_blank"><i
+                                                    class="fab fa-instagram"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--End Footer One Bottom-->
+        </footer>
+        <!--End Footer One-->
+    </div>
+    <!-- /.page-wrapper -->
+
+    <!-- Popover content for delete and make parent functionality -->
+    <div id="popover-content" style="display: none;">
+        <p>This category contains PDFs and cannot be deleted.</p>
+    </div>
+
+    <!-- jQuery and Bootstrap JS for functionality -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/vendors/jarallax/jarallax.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="/assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
+    <script src="/assets/vendors/jquery-appear/jquery.appear.min.js"></script>
+    <script src="/assets/vendors/jquery-circle-progress/jquery.circle-progress.min.js"></script>
+    <script src="/assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/vendors/jquery-validate/jquery.validate.min.js"></script>
+    <script src="/assets/vendors/nouislider/nouislider.min.js"></script>
+    <script src="/assets/vendors/odometer/odometer.min.js"></script>
+    <script src="/assets/vendors/swiper/swiper.min.js"></script>
+    <script src="/assets/vendors/tiny-slider/tiny-slider.min.js"></script>
+    <script src="/assets/vendors/wnumb/wNumb.min.js"></script>
+    <script src="/assets/vendors/wow/wow.js"></script>
+    <script src="/assets/vendors/isotope/isotope.js"></script>
+    <script src="/assets/vendors/countdown/countdown.min.js"></script>
+    <script src="/assets/vendors/owl-carousel/owl.carousel.min.js"></script>
+    <script src="/assets/vendors/twentytwenty/twentytwenty.js"></script>
+    <script src="/assets/vendors/twentytwenty/jquery.event.move.js"></script>
+    <script src="/assets/vendors/parallax/parallax.min.js"></script>
+    <script src="/assets/vendors/tilt.js/tilt.jquery.js"></script>
+
+    <!-- template js -->
+    <script src="/assets/js/agriox.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            // Enable tooltips
+            $('[data-toggle="tooltip"]').tooltip();
+
+            // Initialize sortable for parent categories
+            $("#sortable").sortable({
+                connectWith: "#sortable",
+                update: function (event, ui) {
+                    var parentId = ui.item.attr("id").replace("category_", "");
+                    var childId = ui.item.find("li").map(function () {
+                        return $(this).attr("id").replace("subcategory_", "");
+                    }).get();
+                    $.ajax({
+                        url: '/category/reorder',
+                        type: 'POST',
+                        data: { orderedIds: childId, newParentId: parentId },
+                        success: function (response) {
+                            console.log('Reordered successfully');
+                        },
+                        error: function (err) {
+                            console.error('Error reordering:', err);
+                        }
+                    });
+                }
+            });
+            $("#sortable").disableSelection();
+
+            // Initialize sortable for each parent category's subcategories
+            $('.subcategories').sortable({
+                connectWith: '.subcategories',
+                update: function (event, ui) {
+                    var orderedIds = $(this).sortable("toArray").map(item => item.replace('subcategory_', ''));
+                    var newParentId = $(this).closest('.list-group-item').attr('id').replace('category_', '');
+                    $.ajax({
+                        url: '/category/reorder',
+                        type: 'POST',
+                        data: { orderedIds: orderedIds, newParentId: newParentId },
+                        success: function (response) {
+                            console.log('Reordered subcategories successfully');
+                        },
+                        error: function (err) {
+                            console.error('Error reordering subcategories:', err);
+                        }
+                    });
+                }
+            });
+            $('.subcategories').disableSelection();
+
+            // Handle form submission for adding a category
+            $('#addCategoryBtn').click(function () {
+                $.ajax({
+                    url: '/category/add',
+                    type: 'POST',
+                    data: $('#addCategoryForm').serialize(),
+                    success: function (response) {
+                        console.log('Category added successfully');
+                        location.reload(); // Refresh page after adding category
+                    },
+                    error: function (err) {
+                        console.error('Error adding category:', err);
+                    }
+                });
+            });
+
+            // Handle editing category name
+            $(document).on('click', '.edit-category', function () {
+                var categoryId = $(this).data('id');
+                var categoryNameElement = $('#category_' + categoryId + ' .category-name');
+                var select = $('#select_' + categoryId);
+                select.removeClass('d-none');
+                select.addClass('d-inline');
+                var originalName = categoryNameElement.text().trim();
+
+                let newHTML = '<input type="text" class="editable-input form-control" value="' + originalName + '">'
+
+                categoryNameElement.html(newHTML);
+                $(this).html('<i class="bi bi-check-square"></i>');
+                $(this).after('<span class="cancel-edit ml-2" style="cursor: pointer;"><i class="bi bi-x-square"></i></span>');
+                $('#category_' + categoryId + ' .delete-category').hide();
+            });
+
+            // Handle updating category name
+            $(document).on('click', '.edit-category i.bi-check-square', function () {
+                var categoryId = $(this).closest('li').attr('id').replace('category_', '');
+                var newName = $('#category_' + categoryId + ' .editable-input').val().trim();
+                var newParentId = $('#select_' + categoryId).val().trim();
+                if (newName !== '') {
+                    $.ajax({
+                        url: '/category/update',
+                        type: 'POST',
+                        data: { id: categoryId, name: newName, parent_id: newParentId },
+                        success: function (response) {
+                            console.log('Category updated successfully');
+                            location.reload();
+                        },
+                        error: function (err) {
+                            console.error('Error updating category:', err);
+                        }
+                    });
+                }
+            });
+
+            // Handle cancel editing of category name
+            $(document).on('click', '.cancel-edit', function () {
+                location.reload();
+            });
+
+            // Handle deleting category
+            $(document).on('click', '.delete-category', function () {
+                var categoryId = $(this).data('id');
+                if (!$(this).hasClass('disabled')) {
+                    if (confirm('Are you sure you want to delete this category?')) {
+                        $.ajax({
+                            url: '/category/delete',
+                            type: 'POST',
+                            data: { id: categoryId },
+                            success: function (response) {
+                                console.log('Category deleted successfully');
+                                location.reload();
+                            },
+                            error: function (err) {
+                                console.error('Error deleting category:', err);
+                            }
+                        });
+                    }
+                } else {
+                    $(this).popover({
+                        container: 'body',
+                        content: 'This category contains PDFs and cannot be deleted.',
+                        placement: 'top',
+                        trigger: 'focus'
+                    });
+                    $(this).popover('show');
+                }
+            });
+
+            // Handle making subcategory a parent category
+            $(document).on('click', '.make-parent', function () {
+                var subcategoryId = $(this).data('id');
+                if (!$(this).hasClass('disabled')) {
+                    $.ajax({
+                        url: '/category/updateParent',
+                        type: 'POST',
+                        data: { id: subcategoryId, parentId: null },
+                        success: function (response) {
+                            console.log('Subcategory made parent successfully');
+                            location.reload(); // Refresh page after making parent
+                        },
+                        error: function (err) {
+                            console.error('Error making subcategory parent:', err);
+                        }
+                    });
+                } else {
+                    $(this).popover({
+                        container: 'body',
+                        content: 'This category contains subcategories and cannot be made parent.',
+                        placement: 'top',
+                        trigger: 'focus'
+                    });
+                    $(this).popover('show');
+                }
+            });
+
+            // Handle form submission for updating parent category of subcategory
+            $(document).on('click', '.update-parent-btn', function () {
+                var subcategoryId = $(this).closest('li').attr('id').replace('subcategory_', '');
+                var parentId = $('#updateParentForm_' + subcategoryId + ' select[name="parentId"]').val();
+                if (parentId !== '') {
+                    $.ajax({
+                        url: '/category/updateParent',
+                        type: 'POST',
+                        data: { id: subcategoryId, parentId: parentId },
+                        success: function (response) {
+                            console.log('Parent category updated successfully');
+                            location.reload(); // Refresh page after updating parent
+                        },
+                        error: function (err) {
+                            console.error('Error updating parent category:', err);
+                        }
+                    });
+                }
+            });
+
+            // Handle editing subcategory name
+            $(document).on('click', '.edit-subcategory', function () {
+                var subcategoryId = $(this).data('id');
+                var subcategoryNameElement = $('#subcategory_' + subcategoryId + ' .subcategory-name');
+                var originalName = subcategoryNameElement.text().trim();
+                subcategoryNameElement.html('<input type="text" class="editable-input form-control" style="width: 100%" value="' + originalName + '">');
+                $(this).html('<i class="bi bi-check-square"></i>');
+                $(this).after('<span class="cancel-edit ml-2" style="cursor: pointer;"><i class="bi bi-x-square"></i></span>');
+                $('#subcategory_' + subcategoryId + ' .delete-subcategory').hide();
+                $('#subcategory_' + subcategoryId + ' .make-parent').hide();
+            });
+
+            // Handle updating subcategory name
+            $(document).on('click', '.edit-subcategory i.bi-check-square', function () {
+                var subcategoryId = $(this).closest('li').attr('id').replace('subcategory_', '');
+                var newName = $('#subcategory_' + subcategoryId + ' .editable-input').val().trim();
+                if (newName !== '') {
+                    $.ajax({
+                        url: '/category/update',
+                        type: 'POST',
+                        data: { id: subcategoryId, name: newName },
+                        success: function (response) {
+                            console.log('Subcategory updated successfully');
+                            location.reload();
+                        },
+                        error: function (err) {
+                            console.error('Error updating subcategory:', err);
+                        }
+                    });
+                }
+            });
+
+            // Handle cancel editing of subcategory name
+            $(document).on('click', '.cancel-edit', function () {
+                var subcategoryId = $(this).closest('li').attr('id').replace('subcategory_', '');
+                var originalName = $(this).closest('li').find('.editable-input').val();
+                $('#subcategory_' + subcategoryId + ' .subcategory-name').text(originalName);
+                $(this).closest('li').find('.edit-subcategory').html('<i class="bi bi-pencil-square"></i>');
+                $(this).closest('li').find('.cancel-edit').remove();
+                $(this).closest('li').find('.delete-subcategory').show();
+                $(this).closest('li').find('.make-parent').show();
+            });
+
+            // Handle deleting subcategory
+            $(document).on('click', '.delete-subcategory', function () {
+                var subcategoryId = $(this).data('id');
+                if (!$(this).hasClass('disabled')) {
+                    if (confirm('Are you sure you want to delete this subcategory?')) {
+                        $.ajax({
+                            url: '/category/delete',
+                            type: 'POST',
+                            data: { id: subcategoryId },
+                            success: function (response) {
+                                console.log('Subcategory deleted successfully');
+                                location.reload();
+                            },
+                            error: function (err) {
+                                console.error('Error deleting subcategory:', err);
+                            }
+                        });
+                    }
+                } else {
+                    $(this).popover({
+                        container: 'body',
+                        content: 'This subcategory contains PDFs and cannot be deleted.',
+                        placement: 'top',
+                        trigger: 'focus'
+                    });
+                    $(this).popover('show');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
